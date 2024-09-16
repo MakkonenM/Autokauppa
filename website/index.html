@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mustapään Auto Oy</title>
+    <link rel="stylesheet" type="text/css" href="../styles/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        font-family: Verdana, sans-serif;
+        animation: fadeInAnimation ease 4s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.6;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @media only screen and (max-width: 300px) {
+        .prev,
+        .next,
+        .text {
+          font-size: 11px;
+        }
+      }
+
+      @keyframes fadeInAnimation {
+        0% {
+          opacity: 0.4;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="../Images/logo_light.svg" alt="logo" width="350" height="150" />
+      <nav class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul>
+          <!-- Top Navigation -->
+          <li>
+            <a style="text-decoration: none" href="dokumentaatio.html"
+              >Dokumentaatio</a
+            >
+          </li>
+          <li class="nav-item">
+            <a style="text-decoration: none" href="#rengas"
+              >Rengas suositukset</a
+            >
+          </li>
+          <li>
+            <a style="text-decoration: none" href="#sijainti">Sijaintimme</a>
+          </li>
+          <li>
+            <a style="text-decoration: none" href="#footer">Yhteystiedot</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <img
+        src="../Images/arseny-togulev-xTXIAVRI3rA-unsplash.jpg"
+        alt="paakuva"
+        width="100%"
+        height="750px"
+      />
+
+      <div class="centered">
+        Kaikkiin autoihin rengas vaihdot moitteettomasti.
+      </div>
+    </div>
+    <article id="tietoa">
+      <br />
+      <br />
+      <br />
+      <h2>Mustapään Auto Oy</h2>
+      <p>
+        Mustapään Auto Oy on perustettu jo vuonna 1999. Liikkeen toimiala
+        käytettyjen autojen myynti ja autohuolto. Nyt yritys on laajentamassa
+        liiketoimintaansa perustamalla auton renkaita myyvän sivuston.
+        Markkinointinimeksi on päätetty Mustat Renkaat, joka on myös
+        rekisteröity yrityksen aputoiminimeksi.
+      </p>
+    </article>
+    <article id="rengas">
+      <h2>Meidän testivoittajat</h2>
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 5</div>
+          <img
+            src="../Images/Nokian_Hakka_Black.png"
+            style="width: 50%"
+            height="250px"
+          />
+          <div class="text">Nokian Hakka Musta</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 5</div>
+          <img
+            src="../Images/Nokian_Hakka_Green_3.png"
+            style="width: 50%"
+            height="250px"
+          />
+          <div class="text">Nokian Hakka Vihreä</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 5</div>
+          <img
+            src="../Images/Nokian_Hakkapeliitta_9.png"
+            style="width: 50%"
+            height="250px"
+          />
+          <div class="text">Nokian Hakkapeliitta</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">4 / 5</div>
+          <img
+            src="../Images/Nokian_Nordman_RS_.png"
+            style="width: 50%"
+            height="250px"
+          />
+          <div class="text">Nokian Nordman RS</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+      </div>
+      <br />
+
+      <div style="text-align: center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+      </div>
+    </article>
+    <!-- Rengas slider -->
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName('mySlides');
+        let dots = document.getElementsByClassName('dot');
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = 'none';
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(' active', '');
+        }
+        slides[slideIndex - 1].style.display = 'block';
+        dots[slideIndex - 1].className += ' active';
+      }
+    </script>
+    <article>
+      <h2>Palvelumme</h2>
+      <div class="">
+        <iframe
+          class=""
+          width="500px"
+          height="250"
+          src="https://www.youtube.com/"
+        >
+        </iframe>
+      </div>
+    </article>
+    <article id="sijainti">
+      <h2>Sijainti</h2>
+      <div class="">
+        <iframe
+          class=""
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1732.427913141469!2d24.817253116600323!3d64.26482251294567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46811b8661edf309%3A0x30f587d014779d37!2sKosteenkatu%201%2C%2086300%20Oulainen!5e0!3m2!1sfi!2sfi!4v1674485084276!5m2!1sfi!2sfi"
+          width="500px"
+          height="250"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+    </article>
+    <footer id="footer">
+      <div>
+        <ul style="list-style-type: none">
+          <li><p>Ajanvaraus: 040 712 8158</p></li>
+          <li><p>Sähköposti: myyntimies@mustatrenkaat.net</p></li>
+          <li>
+            <p>
+              Mustapään Auto Oy Mustat Renkaat: Kosteenkatu 1, 86300 Oulainen
+            </p>
+          </li>
+        </ul>
+        <!-- Logot -->
+        <a href="#" class="fa fa-instagram"></a>
+        <a href="#" class="fa fa-facebook"></a>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-twitter-x"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
+          />
+        </svg>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
